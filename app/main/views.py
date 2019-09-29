@@ -16,8 +16,8 @@ def index():
             db.session.add(user)
             db.session.commit()
             session['known'] = False
-            if app.config['FLASKY_ADMIN']:
-                send_mail(app.config['FLASKY_ADMIN'], 'New User', 'mail/new_user', user=user)
+            # if app.config['FLASKY_ADMIN']:
+            #     send_mail(app.config['FLASKY_ADMIN'], 'New User', 'mail/new_user', user=user)
         else:
             session['known'] = True
         session['name'] = form.name.data
